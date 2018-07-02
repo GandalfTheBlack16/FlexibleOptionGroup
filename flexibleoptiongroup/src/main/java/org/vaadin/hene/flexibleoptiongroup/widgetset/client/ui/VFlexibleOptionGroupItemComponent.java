@@ -18,7 +18,7 @@ public class VFlexibleOptionGroupItemComponent extends Composite implements
 
 	protected SimplePanel panel;
 	protected CheckBox checkbox;
-
+	
 	private String ownerId;
 	private boolean multiSelect;
 
@@ -35,17 +35,17 @@ public class VFlexibleOptionGroupItemComponent extends Composite implements
 		updateChecked(checkbox.getValue());
 	}
 
-	public void setMultiSelect(boolean multiselect) {
+	public void setMultiSelect(boolean multiselect, String caption) {
 		if (checkbox != null && this.multiSelect == multiselect) {
 			return;
 		}
 
 		this.multiSelect = multiselect;
 		if (multiselect) {
-			checkbox = new CheckBox();
+			checkbox = new CheckBox(caption);
 			checkbox.addStyleName("v-checkbox");
 		} else {
-			checkbox = new RadioButton(ownerId);
+			checkbox = new RadioButton(ownerId, caption);
 			checkbox.setStyleName("v-radiobutton");
 		}
 

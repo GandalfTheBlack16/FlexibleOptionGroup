@@ -50,6 +50,7 @@ public class FlexibleOptionGroupItemComponent extends AbstractComponent {
 		getState().enabled = owner.isEnabled() && isEnabled();
 		getState().multiSelect = owner.isMultiSelect();
 		getState().readOnly = owner.isReadOnly();
+		getState().caption = getCaption();
 	}
 
 	/**
